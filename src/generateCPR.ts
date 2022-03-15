@@ -15,12 +15,12 @@ export const generateCPR = (person: Person | null, dateOfBirth: Date) => {
     } else {
         personToGetCPR = person;
     };
-    
+
     const finalDate = dateOfBirth.toLocaleDateString("en-GB", {
         year: "2-digit",
         month: "2-digit",
         day: "2-digit",
     });    
-    let last4Digits = person?.gender === 'M' ? generateRandomOddNumberBetweenRange(0, 9999) : generateRandomEvenNumberBetweenRange(0, 9999);
-    return `${finalDate.replaceAll('/','')}-${padZeros(last4Digits, 4)}`;
+    let randomNumber = person?.gender === 'M' ? generateRandomOddNumberBetweenRange(0, 9999) : generateRandomEvenNumberBetweenRange(0, 9999);
+    return `${finalDate.replaceAll('/','')}-${padZeros(randomNumber, 4)}`;
 };
