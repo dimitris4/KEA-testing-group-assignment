@@ -12,8 +12,10 @@ export const generateCPR = (person: Person | null, dateOfBirth: Date) => {
     } else {
         personToGetCPR = person;
     };
-    const month = dateOfBirth.getMonth();
-    const date = dateOfBirth.getDate();
-    const year = dateOfBirth.getFullYear();
-    return `${date}${month}${year}-${generateRandomNumberBetweenRange(100, 999)}${personToGetCPR.gender === 'M' ? 1 : 2}`;
-}
+    const finalDate = dateOfBirth.toLocaleDateString("en-GB", {
+        year: "2-digit",
+        month: "2-digit",
+        day: "2-digit",
+    });
+    return `${finalDate.replaceAll('/','')}-${generateRandomNumberBetweenRange(100, 999)}${personToGetCPR.gender === 'M' ? 1 : 2}`;
+};
