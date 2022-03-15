@@ -21,6 +21,6 @@ export const generateCPR = (person: Person | null, dateOfBirth: Date) => {
         month: "2-digit",
         day: "2-digit",
     });    
-    let randomNumber = person?.gender === 'M' ? generateRandomOddNumber(0, 9999) : generateRandomEvenNumber(0, 9999);
+    let randomNumber = personToGetCPR.gender === 'M' ? generateRandomOddNumber(0, 9999) : generateRandomEvenNumber(0, 9999);
     return `${finalDate.replaceAll('/','')}-${padZeros(randomNumber, 4)}`;
 };
