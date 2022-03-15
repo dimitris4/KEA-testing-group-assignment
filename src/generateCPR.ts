@@ -1,8 +1,11 @@
 import { Person } from '../src/models/Person';
-import { generateRandomNumberBetweenRange } from './utils/generateRandomNumberBetweenRange';
+import { generateRandomEvenNumberBetweenRange, generateRandomOddNumberBetweenRange, padZeros } from './utils/generateRandomNumberBetweenRange';
 
 export const generateCPR = (person: Person | null, dateOfBirth: Date) => {
     let personToGetCPR: Person;
+    // the following logic is stupid, 
+    // but I did it because it is a requirement to
+    // generate CPRs even without a person...
     if (person === null) {
         personToGetCPR = {
             firstName: '',
@@ -12,10 +15,12 @@ export const generateCPR = (person: Person | null, dateOfBirth: Date) => {
     } else {
         personToGetCPR = person;
     };
+    
     const finalDate = dateOfBirth.toLocaleDateString("en-GB", {
         year: "2-digit",
         month: "2-digit",
         day: "2-digit",
-    });
-    return `${finalDate.replaceAll('/','')}-${generateRandomNumberBetweenRange(100, 999)}${personToGetCPR.gender === 'M' ? 1 : 2}`;
+    });    
+    let last4Digits = person?.gender === 'M' ? generateRandomOddNumberBetweenRange(0, 9999) : generateRandomEvenNumberBetweenRange(0, 9999);
+    return `${finalDate.replaceAll('/','')}-${padZeros(last4Digits, 4)}`;
 };
