@@ -1,0 +1,8 @@
+First install node_modules
+$ yarn install
+
+To build the project run:
+$ yarn run build
+
+To start app run:
+$ node dist/index.js
