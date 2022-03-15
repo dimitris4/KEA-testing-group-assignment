@@ -16,11 +16,11 @@ export const generateCPR = (person: Person | null, dateOfBirth: Date) => {
         personToGetCPR = person;
     };
 
-    const finalDate = dateOfBirth.toLocaleDateString("en-GB", {
+    const CPRDate = dateOfBirth.toLocaleDateString("en-GB", {
         year: "2-digit",
         month: "2-digit",
         day: "2-digit",
-    });    
+    }).replaceAll('/','');    
     let randomNumber = personToGetCPR.gender === 'M' ? generateRandomOddNumber(0, 9999) : generateRandomEvenNumber(0, 9999);
-    return `${finalDate.replaceAll('/','')}-${padZeros(randomNumber, 4)}`;
+    return `${CPRDate}-${padZeros(randomNumber, 4)}`;
 };
