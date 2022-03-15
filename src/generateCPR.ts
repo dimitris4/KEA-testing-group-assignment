@@ -1,5 +1,5 @@
 import { Person } from '../src/models/Person';
-import { generateRandomEvenNumberBetweenRange, generateRandomOddNumberBetweenRange, padZeros } from './utils/generateRandomNumberBetweenRange';
+import { generateRandomEvenNumber, generateRandomOddNumber, padZeros } from './utils/generateRandomNumberBetweenRange';
 
 export const generateCPR = (person: Person | null, dateOfBirth: Date) => {
     let personToGetCPR: Person;
@@ -21,6 +21,6 @@ export const generateCPR = (person: Person | null, dateOfBirth: Date) => {
         month: "2-digit",
         day: "2-digit",
     });    
-    let randomNumber = person?.gender === 'M' ? generateRandomOddNumberBetweenRange(0, 9999) : generateRandomEvenNumberBetweenRange(0, 9999);
+    let randomNumber = person?.gender === 'M' ? generateRandomOddNumber(0, 9999) : generateRandomEvenNumber(0, 9999);
     return `${finalDate.replaceAll('/','')}-${padZeros(randomNumber, 4)}`;
 };

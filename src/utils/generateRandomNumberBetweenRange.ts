@@ -1,34 +1,29 @@
-export const generateRandomEvenNumberBetweenRange = (min = 0, max = 100) => {
+export const generateRandomEvenNumber = (min = 0, max = 100) => {
+    let result = 0;
     while (true) {
-        // find diff
-        let difference = max - min;
-        // generate random number 
-        let rand = Math.random();
-        // multiply with difference 
-        rand = Math.floor( rand * difference);
-        // add with min value 
-        rand = rand + min;
-        if (rand % 2 === 0) {
-            return rand;
+        result = generateRandomNumber(min, max);
+        if (result % 2 === 0) {
+            return result;
         }
     };
 };
 
-export const generateRandomOddNumberBetweenRange = (min = 0, max = 100) => {
+export const generateRandomOddNumber = (min = 0, max = 100) => {
+    let result = 0;
     while (true) {
-        // find diff
-        let difference = max - min;
-        // generate random number 
-        let rand = Math.random();
-        // multiply with difference 
-        rand = Math.floor( rand * difference);
-        // add with min value 
-        rand = rand + min;
-        if (rand % 2 !== 0) {
-            return rand;
+        result = generateRandomNumber(min, max);
+        if (result % 2 !== 0) {
+            return result;
         }
     };
 };
+
+const generateRandomNumber = (min = 0, max = 100) => {
+    let difference = max - min;
+    let rand = Math.random();
+    rand = Math.floor( rand * difference);
+    return rand + min;
+}
 
 export const padZeros = (num: number, size: number) => {
     var s = "000000000" + num;
