@@ -21,5 +21,8 @@
     "dotenv": "^16.0.0",
     "mysql": "^2.18.1",
     "xhr2": "^0.2.1"
+  },
+  "jest": {
+    "testResultsProcessor": "./node_modules/jest-junit-reporter"
   }
 }
