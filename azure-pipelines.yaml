@@ -22,3 +22,7 @@ steps:
   - script: |
       yarn run test
     displayName: "run tests"
+
+  - script: |
+      yarn run build
+    displayName: "build project"
