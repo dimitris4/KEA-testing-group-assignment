@@ -33,9 +33,9 @@ steps:
 
   - script: |
       cd .. 
-      ls -R 
+      ls -R
     displayName: "ls parent folder"
-    
+
   - script: |
       echo $(System.DefaultWorkingDirectory)
     displayName: "echo Default Working Directory"
@@ -48,14 +48,20 @@ steps:
     condition: succeededOrFailed()
     inputs:
       testRunner: JUnit
-      testResultsFiles: '**/test-report.xml'
+      testResultsFiles: "**/test-report.xml"
+
+  - task: PublishCodeCoverageResults@1
+    inputs:
+      codeCoverageTool: Cobertura # or JaCoCo
+      summaryFileLocation: "$(System.DefaultWorkingDirectory)/**/*coverage.xml"
+      reportDirectory: "$(System.DefaultWorkingDirectory)/**/coverage"
 
   - task: CopyFiles@2
     inputs:
-      Contents: '$(System.DefaultWorkingDirectory)/dist/**' # Pull the build directory (React)
-      TargetFolder: '$(Build.ArtifactStagingDirectory)'
+      Contents: "$(System.DefaultWorkingDirectory)/dist/**" # Pull the build directory (React)
+      TargetFolder: "$(Build.ArtifactStagingDirectory)"
 
   - task: PublishBuildArtifacts@1
     inputs:
       PathtoPublish: $(Build.ArtifactStagingDirectory) # dist or build files
-      ArtifactName: 'www' # output artifact named www
+      ArtifactName: "www" # output artifact named www
