@@ -28,9 +28,14 @@ steps:
     displayName: "build project"
 
   - script: |
-      ls
+      ls -R
     displayName: "ls current folder"
 
+  - script: |
+      cd .. 
+      ls -R 
+    displayName: "ls parent folder"
+    
   - script: |
       echo $(System.DefaultWorkingDirectory)
     displayName: "echo Default Working Directory"
