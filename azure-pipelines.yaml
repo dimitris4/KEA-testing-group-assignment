@@ -26,3 +26,26 @@ steps:
   - script: |
       yarn run build
     displayName: "build project"
+
+  
+  - script: |
+      ls 
+    displayName: "ls current folder"
+
+  - script: |
+      echo $(System.DefaultWorkingDirectory)
+  displayName: "echo Default Working Directory"
+
+  - script: |
+      echo $(Build.ArtifactStagingDirectory)
+  displayName: "echo Artifact Staging Directory"
+
+  # - task: CopyFiles@2
+  #   inputs:
+  #     Contents: 'dist/**' # Pull the build directory (React)
+  #     TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+  # - task: PublishBuildArtifacts@1
+  #   inputs: 
+  #     PathtoPublish: $(Build.ArtifactStagingDirectory) # dist or build files
+  #     ArtifactName: 'www' # output artifact named www
