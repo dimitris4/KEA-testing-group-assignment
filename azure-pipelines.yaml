@@ -54,7 +54,6 @@ steps:
     inputs:
       codeCoverageTool: Cobertura # or JaCoCo
       summaryFileLocation: "$(System.DefaultWorkingDirectory)/**/*coverage.xml"
-      reportDirectory: "$(System.DefaultWorkingDirectory)/**/coverage"
 
   - task: CopyFiles@2
     inputs:
