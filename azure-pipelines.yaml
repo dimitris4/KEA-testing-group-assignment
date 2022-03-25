@@ -50,12 +50,12 @@ steps:
       testRunner: JUnit
       testResultsFiles: '**/test-report.xml'
 
-  # - task: CopyFiles@2
-  #   inputs:
-  #     Contents: 'dist/**' # Pull the build directory (React)
-  #     TargetFolder: '$(Build.ArtifactStagingDirectory)'
+  - task: CopyFiles@2
+    inputs:
+      Contents: '$(System.DefaultWorkingDirectory)/dist/**' # Pull the build directory (React)
+      TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
-  # - task: PublishBuildArtifacts@1
-  #   inputs:
-  #     PathtoPublish: $(Build.ArtifactStagingDirectory) # dist or build files
-  #     ArtifactName: 'www' # output artifact named www
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: $(Build.ArtifactStagingDirectory) # dist or build files
+      ArtifactName: 'www' # output artifact named www
