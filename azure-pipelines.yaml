@@ -67,5 +67,6 @@ steps:
       ArtifactName: "www" # output artifact named www
 
   - script: |
+      cd ..
       ls -R
-    displayName: "ls current folder again"
+    displayName: "ls parent folder again"
