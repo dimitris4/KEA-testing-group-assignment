@@ -5,5 +5,5 @@ test("sum of 1 and 5 to be 6", () => {
 });
 
 test("substaction of 10 and 5 to be 5", () => {
-  expect(substract(10, 5)).toBe(55);
+  expect(substract(10, 5)).toBe(5);
 });
