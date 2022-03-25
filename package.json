@@ -14,6 +14,7 @@
     "@types/jest": "^27.4.1",
     "@types/mysql": "^2.15.21",
     "jest": "^27.5.1",
+    "jest-junit-reporter": "^1.1.0",
     "ts-jest": "^27.1.3",
     "typescript": "^4.6.2"
   },
@@ -21,8 +22,5 @@
     "dotenv": "^16.0.0",
     "mysql": "^2.18.1",
     "xhr2": "^0.2.1"
-  },
-  "jest": {
-    "testResultsProcessor": "./node_modules/jest-junit-reporter"
   }
 }
