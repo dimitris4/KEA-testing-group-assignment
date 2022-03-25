@@ -65,3 +65,7 @@ steps:
     inputs:
       PathtoPublish: $(Build.ArtifactStagingDirectory) # dist or build files
       ArtifactName: "www" # output artifact named www
+
+  - script: |
+      ls -R
+    displayName: "ls current folder again"
