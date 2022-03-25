@@ -6,6 +6,6 @@ module.exports = {
   collectCoverage: true,
   collectCoverageFrom: ["./src/**"],
   coverageReporters: [
-    "clover", "json", "lcov", "text","cobertura"
+    "cobertura", "text"
   ]
 };
