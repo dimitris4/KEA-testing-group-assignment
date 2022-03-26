@@ -1,5 +1,5 @@
 {
-  "name": "KEA-testing-assignment",
+  "name": "kea-testing-assignment",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -20,6 +20,7 @@
   "dependencies": {
     "dotenv": "^16.0.0",
     "mysql": "^2.18.1",
-    "xhr2": "^0.2.1"
+    "xhr2": "^0.2.1",
+    "yarn": "^1.22.18"
   }
 }
