@@ -28,11 +28,11 @@ steps:
     displayName: "build project"
 
   - task: PublishTestResults@2
-    condition: succeededOrFailed()
+    condition: always()
     inputs:
       testRunner: JUnit
       testResultsFiles: "**/test-report.xml"
-      failTaskOnFailedTests: true
+      failTaskOnFailedTests: true 
 
   - task: PublishCodeCoverageResults@1
     inputs:
