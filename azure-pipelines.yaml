@@ -27,23 +27,6 @@ steps:
       yarn run build
     displayName: "build project"
 
-  - script: |
-      ls -R
-    displayName: "ls current folder"
-
-  - script: |
-      cd .. 
-      ls -R
-    displayName: "ls parent folder"
-
-  - script: |
-      echo $(System.DefaultWorkingDirectory)
-    displayName: "echo Default Working Directory"
-
-  - script: |
-      echo $(Build.ArtifactStagingDirectory)
-    displayName: "echo Artifact StagingDirectory"
-
   - task: PublishTestResults@2
     condition: succeededOrFailed()
     inputs:
@@ -64,9 +47,4 @@ steps:
   - task: PublishBuildArtifacts@1
     inputs:
       PathtoPublish: $(Build.ArtifactStagingDirectory) # dist or build files
-      ArtifactName: "www" # output artifact named www
-
-  - script: |
-      cd ..
-      ls -R
-    displayName: "ls parent folder again"
+      ArtifactName: "build-folder" # output artifact named www
