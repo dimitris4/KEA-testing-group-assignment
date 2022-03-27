@@ -20,7 +20,7 @@ steps:
       echo "Using a global non-secret var mapped in the pipeline works: $GLOBAL_MY_MAPPED_ENV_VAR" 
       echo "Using the mapped env var for this task works and is recommended: $MY_MAPPED_ENV_VAR"
     env:
-      MY_MAPPED_ENV_VAR: $(MY_SQL_DB_HOST) # the recommended way to map to an env variable
+      MY_SQL_DB_HOST: $(MY_SQL_DB_HOST) # the recommended way to map to an env variable
   
   - task: NodeTool@0
     inputs:
