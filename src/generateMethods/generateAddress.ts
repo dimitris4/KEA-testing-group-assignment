@@ -45,6 +45,7 @@ const getRandomPostalCodeAsync: any = async () => {
 };
 
 export const generateAddress = async () => {
+    MySQLConnector.init();
     const getRandomPostalCode = await getRandomPostalCodeAsync();
     return `${generateStreet()} ${generateStreetNumber()} ${generateFloor()}.${generateDoor()}, ${getRandomPostalCode.postalCode} ${getRandomPostalCode.town}`
 }

@@ -47,3 +47,12 @@ export const execute = <T>(query: string, params: string[] | Object): Promise<T>
     throw new Error('failed to execute MySQL query');
   }
 }
+
+export function end() {
+  pool.end(function(err) {
+    if (err) {
+      return console.log('error:' + err.message);
+    }
+    console.log('Close the database connection.');
+  });
+}

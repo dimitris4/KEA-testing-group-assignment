@@ -26,6 +26,7 @@ steps:
       MY_SQL_DB_PASSWORD: $(MY_SQL_DB_PASSWORD)
       MY_SQL_DB_DATABASE: $(MY_SQL_DB_DATABASE)
       MY_SQL_DB_PORT: $(MY_SQL_DB_PORT)
+    displayName: "run tests"
 
   - script: |
       yarn run build
