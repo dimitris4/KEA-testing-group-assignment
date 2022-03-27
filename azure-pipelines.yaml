@@ -1,5 +1,5 @@
 variables:
- GLOBAL_MYSECRET: $(MY_SQL_DB_HOST)
+ MY_SQL_DB_HOST: $(MY_SQL_DB_HOST)
 
 # Node.js
 # Build a general Node.js project with npm.
