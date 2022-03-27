@@ -12,7 +12,7 @@ pool:
 steps:
 - task: AzureKeyVault@1
   inputs:
-    azureSubscription: 'Azure for Students'
+    azureSubscription: 'eeb359bd-b0d8-41a3-87a6-74bdc511932d'
     KeyVaultName: 'kvl-testing-dev'
     SecretsFilter: '*'
     RunAsPreJob: false
