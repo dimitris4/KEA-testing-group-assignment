@@ -25,8 +25,8 @@ steps:
       MY_SQL_DB_USER: $(MY_SQL_DB_USER)
       MY_SQL_DB_PASSWORD: $(MY_SQL_DB_PASSWORD)
       MY_SQL_DB_DATABASE: $(MY_SQL_DB_DATABASE)
-      MY_SQL_DB_PORT: $(MY_SQL_DB_PORT)      
-    
+      MY_SQL_DB_PORT: $(MY_SQL_DB_PORT)
+
   - script: |
       yarn run build
     displayName: "build project"
