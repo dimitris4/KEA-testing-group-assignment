@@ -1,5 +1,5 @@
-import { Person } from '../src/models/Person';
-import { generateRandomNumber } from './utils/generateRandomNumberBetweenRange';
+import { Person } from '../models/Person';
+import { generateRandomNumber } from '../utils/generateRandomNumberBetweenRange';
 
 export const generatePhoneNumber = (person: Person | null) => {
     let personToGetPhoneNumber: Person;
