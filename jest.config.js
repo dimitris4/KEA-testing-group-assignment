@@ -2,4 +2,10 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
+  testResultsProcessor: "./node_modules/jest-junit-reporter",
+  collectCoverage: true,
+  collectCoverageFrom: ["./src/**"],
+  coverageReporters: [
+    "cobertura", "text"
+  ]
 };

@@ -9,9 +9,9 @@ let pool: Pool;
  * generates pool connection to be used throughout the app
  */
 export const init = () => {
-  try {
+  try {    
     pool = createPool({
-      connectionLimit: process.env.MY_SQL_DB_CONNECTION_LIMIT ? parseInt(process.env.MY_SQL_DB_CONNECTION_LIMIT) : 4,
+      // connectionLimit: process.env.MY_SQL_DB_CONNECTION_LIMIT ? parseInt(process.env.MY_SQL_DB_CONNECTION_LIMIT) : 4,
       host: process.env.MY_SQL_DB_HOST,
       user: process.env.MY_SQL_DB_USER,
       password: process.env.MY_SQL_DB_PASSWORD,
