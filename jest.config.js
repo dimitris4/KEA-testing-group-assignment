@@ -6,6 +6,7 @@ module.exports = {
   collectCoverage: true,
   collectCoverageFrom: ["./src/**"],
   coveragePathIgnorePatterns: [
+    "./src/utils/**",
     "./src/index.ts"
   ],
   coverageReporters: [
