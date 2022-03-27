@@ -18,7 +18,7 @@ export const generateRandomOddNumber = (min = 0, max = 100) => {
     };
 };
 
-const generateRandomNumber = (min = 0, max = 100) => {
+export const generateRandomNumber = (min = 0, max = 100) => {
     let difference = max - min;
     let rand = Math.random();
     rand = Math.floor( rand * difference);
