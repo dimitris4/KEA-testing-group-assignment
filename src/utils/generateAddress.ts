@@ -39,6 +39,6 @@ export const generatePostalCode =async ()=>{
         const getCode = generateRandomNumber(1301,9990)
         postalCode= await pool.execute("SELECT * from postal_code where cPostalCode=?",getCode);
     }
-    pool.kill();
+    //pool.kill();
     return postalCode[0];
 }
