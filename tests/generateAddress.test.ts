@@ -5,6 +5,7 @@ afterAll(() => {
   MySQLConnector.end();
 });
 
-test('Test db connection', () => {
-    return expect(generateAddress()).resolves.toBe('asdasdasd');
-  });
+test('Test db connection', async () => {
+  const g = await generateAddress();
+  return expect(typeof g).toBe('string');
+});
