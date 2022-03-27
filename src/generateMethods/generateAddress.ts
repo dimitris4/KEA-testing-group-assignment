@@ -2,9 +2,6 @@ import * as MySQLConnector from '../utils/mysql.connector';
 import { execute } from "./../utils/mysql.connector";
 import { generateRandomNumber } from '../utils/generateRandomNumberBetweenRange';
 
-// create database pool
-MySQLConnector.init();
-
 const generateStreet = () => {
     let results = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
