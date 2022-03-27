@@ -9,15 +9,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-
-  - bash: |
-      echo "Using an input-macro works: $(mySecret)"
-      echo "Using the env var directly does not work: $MYSECRET"
-      echo "Using a global secret var mapped in the pipeline does not work either: $GLOBAL_MYSECRET"
-      echo "Using a global non-secret var mapped in the pipeline works: $GLOBAL_MY_MAPPED_ENV_VAR" 
-      echo "Using the mapped env var for this task works and is recommended: $MY_MAPPED_ENV_VAR"
-    env:
-      MY_SQL_DB_HOST: $(MY_SQL_DB_HOST) # the recommended way to map to an env variable
   
   - task: NodeTool@0
     inputs:
@@ -31,7 +22,11 @@ steps:
   - script: |
       yarn run test
     env:
-      MY_SQL_DB_HOST: $(MY_SQL_DB_HOST) #this will store the value from 'sauceUsername' into SAUCE_USERNAME
+      MY_SQL_DB_HOST: $(MY_SQL_DB_HOST) 
+      MY_SQL_DB_USER: $(MY_SQL_DB_USER)
+      MY_SQL_DB_PASSWORD: $(MY_SQL_DB_PASSWORD)
+      MY_SQL_DB_DATABASE: $(MY_SQL_DB_DATABASE)
+      MY_SQL_DB_PORT: $(MY_SQL_DB_PORT)      
     
   - bash: echo $(SAUCE_USERNAME) # will output our username stored in SAUCE_USERNAME env variable
 
