@@ -53,6 +53,5 @@ export function end() {
     if (err) {
       return console.log('error:' + err.message);
     }
-    console.log('Close the database connection.');
   });
 }
