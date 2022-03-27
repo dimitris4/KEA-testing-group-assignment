@@ -2,7 +2,6 @@
 # Build a general Node.js project with npm.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
-
 trigger:
   - main
 
@@ -18,32 +17,37 @@ steps:
   - script: |
       yarn install
     displayName: "install dependencies"
-
+    
   - script: |
       yarn run test
-    displayName: "run tests"
+    env:
+      MY_SQL_DB_HOST: $(MY_SQL_DB_HOST) 
+      MY_SQL_DB_USER: $(MY_SQL_DB_USER)
+      MY_SQL_DB_PASSWORD: $(MY_SQL_DB_PASSWORD)
+      MY_SQL_DB_DATABASE: $(MY_SQL_DB_DATABASE)
+      MY_SQL_DB_PORT: $(MY_SQL_DB_PORT)
 
   - script: |
       yarn run build
     displayName: "build project"
-
+    
   - task: PublishTestResults@2
     condition: always()
     inputs:
       testRunner: JUnit
       testResultsFiles: "**/test-report.xml"
       failTaskOnFailedTests: true
-
+      
   - task: PublishCodeCoverageResults@1
     inputs:
       codeCoverageTool: Cobertura # or JaCoCo
       summaryFileLocation: "$(System.DefaultWorkingDirectory)/**/*coverage.xml"
-
+      
   - task: CopyFiles@2
     inputs:
       Contents: "$(System.DefaultWorkingDirectory)/dist/**" # Pull the build directory (React)
       TargetFolder: "$(Build.ArtifactStagingDirectory)"
-
+      
   - task: PublishBuildArtifacts@1
     inputs:
       PathtoPublish: $(Build.ArtifactStagingDirectory) # dist or build files
