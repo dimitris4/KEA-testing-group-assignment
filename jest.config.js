@@ -5,6 +5,9 @@ module.exports = {
   testResultsProcessor: "./node_modules/jest-junit-reporter",
   collectCoverage: true,
   collectCoverageFrom: ["./src/**"],
+  coveragePathIgnorePatterns: [
+    "./src/index.ts"
+  ],
   coverageReporters: [
     "cobertura", "text"
   ]
