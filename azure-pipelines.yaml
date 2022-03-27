@@ -12,7 +12,7 @@ pool:
 steps:
 - task: AzureKeyVault@1
   inputs:
-    azureSubscription: 'eeb359bd-b0d8-41a3-87a6-74bdc511932d'
+    azureSubscription: 'ConnectionToAzure'
     KeyVaultName: 'kvl-testing-dev'
     SecretsFilter: '*'
     RunAsPreJob: false
