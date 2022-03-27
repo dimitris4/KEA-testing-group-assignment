@@ -10,6 +10,11 @@ let pool: Pool;
  */
 export const init = () => {
   try {    
+
+    console.log('host = ', process.env.MY_SQL_DB_HOST);
+    console.log('user = ', process.env.MY_SQL_DB_USER);
+    console.log('password = ', process.env.MY_SQL_DB_PASSWORD);
+    
     pool = createPool({
       // connectionLimit: process.env.MY_SQL_DB_CONNECTION_LIMIT ? parseInt(process.env.MY_SQL_DB_CONNECTION_LIMIT) : 4,
       host: process.env.MY_SQL_DB_HOST,
