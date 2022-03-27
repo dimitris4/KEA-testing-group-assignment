@@ -10,6 +10,13 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: AzureKeyVault@1
+  inputs:
+    azureSubscription: 'Azure for Students'
+    KeyVaultName: 'kvl-testing-dev'
+    SecretsFilter: '*'
+    RunAsPreJob: false
+
   - task: NodeTool@0
     inputs:
       versionSpec: "12.x"
