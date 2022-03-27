@@ -1,3 +1,6 @@
+variables:
+ GLOBAL_MYSECRET: $(MY_SQL_DB_HOST)
+
 # Node.js
 # Build a general Node.js project with npm.
 # Add steps that analyze code, save build artifacts, deploy, and more:
@@ -9,6 +12,16 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+
+  - bash: |
+      echo "Using an input-macro works: $(mySecret)"
+      echo "Using the env var directly does not work: $MYSECRET"
+      echo "Using a global secret var mapped in the pipeline does not work either: $GLOBAL_MYSECRET"
+      echo "Using a global non-secret var mapped in the pipeline works: $GLOBAL_MY_MAPPED_ENV_VAR" 
+      echo "Using the mapped env var for this task works and is recommended: $MY_MAPPED_ENV_VAR"
+    env:
+      MY_MAPPED_ENV_VAR: $(MY_SQL_DB_HOST) # the recommended way to map to an env variable
+  
   - task: NodeTool@0
     inputs:
       versionSpec: "12.x"
@@ -21,7 +34,7 @@ steps:
   - script: |
       yarn run test
     displayName: "run tests"
-    
+
   - script: |
       yarn run build
     displayName: "build project"
