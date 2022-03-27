@@ -28,9 +28,13 @@ steps:
       yarn install
     displayName: "install dependencies"
     
-  - script: |
-      yarn run test
-    displayName: "run tests"
+  - task: Npm@1
+    displayName: 'Run tests'
+    env:
+      SAUCE_USERNAME: $(sauceUsername) #this will store the value from 'sauceUsername' into SAUCE_USERNAME
+      SAUCE_ACCESS_KEY: $(sauceKey)
+    
+  - bash: echo $(SAUCE_USERNAME) # will output our username stored in SAUCE_USERNAME env variable
 
   - script: |
       yarn run build
