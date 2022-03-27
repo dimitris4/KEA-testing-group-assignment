@@ -28,11 +28,8 @@ steps:
       yarn install
     displayName: "install dependencies"
     
-  - task: Npm@1
-    displayName: 'Run tests'
-    inputs:
-      command: 'custom'
-      customCommand: 'yarn run test'
+  - script: |
+      yarn run test
     env:
       MY_SQL_DB_HOST: $(MY_SQL_DB_HOST) #this will store the value from 'sauceUsername' into SAUCE_USERNAME
     
