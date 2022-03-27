@@ -5,7 +5,7 @@
 
 trigger:
   - main
-  - ci-cd
+
 pool:
   vmImage: ubuntu-latest
 
@@ -32,7 +32,7 @@ steps:
     inputs:
       testRunner: JUnit
       testResultsFiles: "**/test-report.xml"
-      failTaskOnFailedTests: true 
+      failTaskOnFailedTests: true
 
   - task: PublishCodeCoverageResults@1
     inputs:
