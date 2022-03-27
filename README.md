@@ -1,4 +1,5 @@
 # KEA-testing-group-assignment
 
-Run yarn install
-and yarn run build
+yarn install
+
+yarn run build
