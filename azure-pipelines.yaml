@@ -9,7 +9,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-  
   - task: NodeTool@0
     inputs:
       versionSpec: "12.x"
@@ -28,8 +27,6 @@ steps:
       MY_SQL_DB_DATABASE: $(MY_SQL_DB_DATABASE)
       MY_SQL_DB_PORT: $(MY_SQL_DB_PORT)      
     
-  - bash: echo $(SAUCE_USERNAME) # will output our username stored in SAUCE_USERNAME env variable
-
   - script: |
       yarn run build
     displayName: "build project"
