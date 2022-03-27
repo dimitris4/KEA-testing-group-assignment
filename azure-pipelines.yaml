@@ -14,7 +14,7 @@ steps:
 # Node.js
 - task: AzureKeyVault@2
   inputs:
-    azureSubscription: 'Azure for Students(eeb359bd-b0d8-41a3-87a6-74bdc511932d)'
+    azureSubscription: 'Azure for Students'
     KeyVaultName: 'kvl-testing-dev'
     SecretsFilter: '*'
     RunAsPreJob: true
