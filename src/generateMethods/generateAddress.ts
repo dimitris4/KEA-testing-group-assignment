@@ -1,17 +1,11 @@
 import * as MySQLConnector from '../utils/mysql.connector';
 import { execute } from "./../utils/mysql.connector";
+import { generateRandomNumber } from '../utils/generateRandomNumberBetweenRange';
 
 // create database pool
 MySQLConnector.init();
 
-export const generateRandomNumber = (min = 0, max = 100) => {
-    let difference = max - min + 1;
-    let rand = Math.random();
-    rand = Math.floor(rand * difference) + min;
-    return rand;
-}
-
-export const generateStreet = async () => {
+const generateStreet = () => {
     let results = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
     while (results.length !== 30) {
@@ -20,11 +14,11 @@ export const generateStreet = async () => {
     return results;
 }
 
-export const generateStreetNumber = () => {
+const generateStreetNumber = () => {
     return generateRandomNumber(1, 999)
 }
 
-export const generateFloor = () => {
+const generateFloor = () => {
     const result = generateRandomNumber(0, 99);
     if (result === 0) {
         return "st"
@@ -33,17 +27,27 @@ export const generateFloor = () => {
     }
 }
 
-export const generateDoor = () => {
+const generateDoor = () => {
     const sideDoor = ["th", "mf", "tv"]
     const initialDoorNumber = generateRandomNumber(1, 50);
     return sideDoor[generateRandomNumber(0, 2)] + " " + Math.round(initialDoorNumber)
 }
 
-export const generatePostalCode = async () => {
-    let postalCode = [];
-    while (!postalCode.length) {
-        const getCode = generateRandomNumber(1301, 9990)
-        postalCode = await execute("SELECT * from postal_code where cPostalCode=?", getCode) as any;
-    }
-    return postalCode[0];
+const getRandomPostalCodeAsync: any = async () => {
+  try {
+    const response = await execute<any>(`
+    SELECT *
+    FROM postal_code
+    ORDER BY RAND()
+    LIMIT 1;
+  `, []);
+    return { postalCode: response[0].cPostalCode, town: response[0].cTownName };
+  } catch (error) {
+    console.error('Error! ', typeof error === 'object' ? JSON.stringify(error) : error);
+  }
+};
+
+export const generateAddress = async () => {
+    const getRandomPostalCode = await getRandomPostalCodeAsync();
+    return `${generateStreet()} ${generateStreetNumber()} ${generateFloor()}.${generateDoor()}, ${getRandomPostalCode.postalCode} ${getRandomPostalCode.town}`
 }
