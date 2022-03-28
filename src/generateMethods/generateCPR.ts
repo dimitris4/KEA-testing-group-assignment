@@ -7,6 +7,7 @@ import {
 
 export const generateCPR = (person: Person | null, dateOfBirth: Date) => {
     let personToGetCPR: Person;
+    let result: string;
     // the following logic is stupid, 
     // but I did it because it is a requirement to
     // generate CPRs even without a person...
@@ -26,5 +27,6 @@ export const generateCPR = (person: Person | null, dateOfBirth: Date) => {
         day: "2-digit",
     }).replaceAll('/','');    
     let randomNumber = personToGetCPR.gender === 'male' ? generateRandomOddNumber(0, 9999) : generateRandomEvenNumber(0, 9999);
-    return `${CPRDate}-${padZeros(randomNumber, 4)}`;
+    result = `${CPRDate}-${padZeros(randomNumber, 4)}`;
+    return result;
 };
