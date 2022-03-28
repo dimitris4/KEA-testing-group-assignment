@@ -1,5 +1,5 @@
-import { generatePhoneNumber } from "../generateMethods/generatePhoneNumber";
-import {Person} from "../models/Person";
+import { generatePhoneNumber } from "../src/generateMethods/generatePhoneNumber";
+import {Person} from "../src/models/Person";
 
 test('check that generated phone number is of type string', () =>{
     const generatedPhoneNumber = generatePhoneNumber(null);
