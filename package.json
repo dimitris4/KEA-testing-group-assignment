@@ -1,12 +1,15 @@
 {
-  "name": "KEA-testing-assignment",
+  "name": "kea-testing-assignment",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "test": "jest --clearCache && jest",
     "build": "npx tsc",
-    "start": "node dist/src/index.js"
+    "start": "node dist/src/index.js",
+    "lint": "eslint . --ext .ts",
+    "lint-and-fix": "eslint . --ext .ts --fix",
+    "prettier-format": "prettier --config .prettierrc {src,tests}/**/*.ts --write"
   },
   "keywords": [],
   "author": "",
@@ -14,8 +17,14 @@
   "devDependencies": {
     "@types/jest": "^27.4.1",
     "@types/mysql": "^2.15.21",
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/parser": "^5.17.0",
+    "eslint": "^8.12.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.5.1",
     "jest-junit-reporter": "^1.1.0",
+    "prettier": "^2.6.1",
     "ts-jest": "^27.1.3",
     "typescript": "^4.6.2"
   },

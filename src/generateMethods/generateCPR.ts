@@ -1,5 +1,9 @@
-import { Person } from '../models/Person';
-import { generateRandomEvenNumber, generateRandomOddNumber, padZeros } from '../utils/generateRandomNumberBetweenRange';
+import { Person } from "../models/Person";
+import {
+  generateRandomEvenNumber,
+  generateRandomOddNumber,
+  padZeros
+} from "../utils/generateRandomNumberBetweenRange";
 
 export const generateCPR = (person: Person | null, dateOfBirth: Date) => {
     let personToGetCPR: Person;
@@ -15,6 +19,9 @@ export const generateCPR = (person: Person | null, dateOfBirth: Date) => {
     } else {
         personToGetCPR = person;
     };
+  } else {
+    personToGetCPR = person;
+  }
 
     const CPRDate = dateOfBirth.toLocaleDateString("en-GB", {
         year: "2-digit",
