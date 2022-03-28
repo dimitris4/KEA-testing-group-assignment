@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest --clearCache && jest",
     "build": "npx tsc",
-    "start": "node dist/src/index.js"
+    "start": "node dist/src/index.js",
+    "prettier-format": "prettier --config .prettierrc {src,tests}/**/*.ts --write"
   },
   "keywords": [],
   "author": "",
