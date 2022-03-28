@@ -7,6 +7,7 @@
     "test": "jest --clearCache && jest",
     "build": "npx tsc",
     "start": "node dist/src/index.js",
+    "lint": "eslint . --ext .ts --fix",
     "prettier-format": "prettier --config .prettierrc {src,tests}/**/*.ts --write"
   },
   "keywords": [],
@@ -15,6 +16,9 @@
   "devDependencies": {
     "@types/jest": "^27.4.1",
     "@types/mysql": "^2.15.21",
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/parser": "^5.17.0",
+    "eslint": "^8.12.0",
     "jest": "^27.5.1",
     "jest-junit-reporter": "^1.1.0",
     "ts-jest": "^27.1.3",
