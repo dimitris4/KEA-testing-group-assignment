@@ -13,7 +13,7 @@ test("check that phone number has 8 digits where person is null", () => {
 });
 
 test("check that phone number has 8 digits where person is created", () => {
-  let person: Person = {
+  const person: Person = {
     firstName: "Annemette P.",
     lastName: "Nilsson",
     gender: "female"

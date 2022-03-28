@@ -30,12 +30,12 @@ export const init = () => {
  * executes SQL queries in MySQL db
  *
  * @param {string} query - provide a valid SQL query
- * @param {string[] | Object} params - provide the parameterized values used
+ * @param {string[] | object} params - provide the parameterized values used
  * in the query
  */
 export const execute = <T>(
   query: string,
-  params: string[] | Object
+  params: string[] | object
 ): Promise<T> => {
   try {
     if (!pool)

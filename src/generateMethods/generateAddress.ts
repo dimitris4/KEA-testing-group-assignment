@@ -57,7 +57,7 @@ const getRandomPostalCodeAsync: any = async () => {
 
 export const generateAddress = async () => {
   const getRandomPostalCode = await getRandomPostalCodeAsync();
-  let returnObject: Address = {
+  const returnObject: Address = {
     street: generateStreet(),
     streetNumber: generateStreetNumber(),
     floor: generateFloor(),

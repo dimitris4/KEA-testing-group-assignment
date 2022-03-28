@@ -3,7 +3,7 @@ import { generateAddress } from "./generateMethods/generateAddress";
 import { generatePhoneNumber } from "./generateMethods/generatePhoneNumber";
 import { generateNameAndGender } from "./generateMethods/generateNameAndGender";
 
-let rl = readline.createInterface({
+const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
@@ -24,38 +24,46 @@ const main = async () => {
       "[9] Fake person information in bulk (all information for 2 to 100 persons)\nAnswer: ",
     async (answer) => {
       switch (answer) {
-        case "1":
+        case "1": {
           // const dateOfBirth = generateDateOfBirth();
           // console.log(generateCPR(null, dateOfBirth));
           break;
-        case "2":
+        }
+        case "2": {
           console.log(generateNameAndGender());
           break;
-        case "3":
+        }
+        case "3": {
           // const fullNameAndGender =  generateNameAndGender();
           // const dateOfBirth = generateDateOfBirth();
           // console.log();
           break;
-        case "4":
+        }
+        case "4": {
           // const person = generateNameAndGender();
           // const dateOfBirth = generateDateOfBirth();
           // const cpr = generateCPR(person, dateOfBirth);
           // console.log();
           break;
-        case "5":
+        }
+        case "5": {
           // const person = generateNameAndGender();
           // const dateOfBirth = generateDateOfBirth();
           // const cpr = generateCPR(person, dateOfBirth);
           // console.log();
           break;
-        case "6":
+        }
+        case "6": {
           const result = await generateAddress();
           console.log(result);
           process.exit();
-        case "7":
+          break;
+        }
+        case "7": {
           console.log(generatePhoneNumber(null));
           break;
-        case "8":
+        }
+        case "8": {
           // const person = generateNameAndGender();
           // const dateOfBirth = generateDateOfBirth();
           // const cpr = generateCPR(person, dateOfBirth);
@@ -63,7 +71,8 @@ const main = async () => {
           // const address = generateAddress();
           // console.log();
           break;
-        case "9":
+        }
+        case "9": {
           rl.question(
             "How many persons?\nEnter a number between 2 and 100.\nAnswer: ",
             function (answer) {
@@ -84,6 +93,8 @@ const main = async () => {
               rl.close();
             }
           );
+          break;
+        }
       }
 
       // hack to keep connection open if the user needs to enter second answer
