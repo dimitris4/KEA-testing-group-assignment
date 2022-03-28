@@ -10,7 +10,7 @@ export const generateCPR = (person: Person | null, dateOfBirth: Date) => {
         personToGetCPR = {
             firstName: '',
             lastName: '',
-            gender: (Date.now() % 2) == 1 ? 'M' : 'F',
+            gender: (Date.now() % 2) == 1 ? 'male' : 'female',
         }
     } else {
         personToGetCPR = person;
@@ -21,6 +21,6 @@ export const generateCPR = (person: Person | null, dateOfBirth: Date) => {
         month: "2-digit",
         day: "2-digit",
     }).replaceAll('/','');    
-    let randomNumber = personToGetCPR.gender === 'M' ? generateRandomOddNumber(0, 9999) : generateRandomEvenNumber(0, 9999);
+    let randomNumber = personToGetCPR.gender === 'male' ? generateRandomOddNumber(0, 9999) : generateRandomEvenNumber(0, 9999);
     return `${CPRDate}-${padZeros(randomNumber, 4)}`;
 };
