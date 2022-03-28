@@ -45,7 +45,6 @@ describe("Floor generation testing", () => {
   });
   test("Floor is either st or a number", async () => {
     let testFloor = await generateAddress();
-    testFloor.floor = "80";
     expect(testFloor.floor).toMatch(/^st$|^[0-9]+$/);
   });
 });
