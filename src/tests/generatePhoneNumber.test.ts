@@ -1,7 +1,7 @@
 import { generatePhoneNumber } from "../generateMethods/generatePhoneNumber";
 import {Person} from "../models/Person";
 
-test('check that genereated phone number is of type string', () =>{
+test('check that generated phone number is of type string', () =>{
     const generatedPhoneNumber = generatePhoneNumber(null);
     expect(typeof generatedPhoneNumber).toBe("string")
 });
@@ -23,7 +23,6 @@ test('check that phone number has 8 digits where person is created', () => {
     const nrOfDigits = generatedPhoneNumber.length; 
     expect(nrOfDigits).toBe(8);
 });
-
 
 
 test('test function 100000 and check that it always returns a phone number with 8 digits', () => {
