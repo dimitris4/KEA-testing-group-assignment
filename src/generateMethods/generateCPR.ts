@@ -21,7 +21,6 @@ export const generateCPR = (person: Person | null, dateOfBirth: Date) => {
         personToGetCPR = person;
     };
 
-
     const CPRDate = dateOfBirth.toLocaleDateString("en-GB", {
         year: "2-digit",
         month: "2-digit",

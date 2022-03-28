@@ -1,12 +1,18 @@
-import * as readline from "readline";
-import { generateAddress } from "./generateMethods/generateAddress";
-import { generatePhoneNumber } from "./generateMethods/generatePhoneNumber";
+import * as readline from 'readline';
+import { generateAddress } from './generateMethods/generateAddress';
+import { generatePhoneNumber } from './generateMethods/generatePhoneNumber';
 import { generateNameAndGender } from "./generateMethods/generateNameAndGender";
+import { generateBirthDate } from './generateMethods/generateBirthDate';
+import { generateCPR } from './generateMethods/generateCPR';
 
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
+
+let fullNameAndGender;
+let birthDate;
+let address;
 
 const main = async () => {
   rl.question(
@@ -23,79 +29,68 @@ const main = async () => {
       "[8] All information for a fake person (CPR, full name, gender, date of birth, address, mobile phone number)\n" +
       "[9] Fake person information in bulk (all information for 2 to 100 persons)\nAnswer: ",
     async (answer) => {
-      switch (answer) {
-        case "1": {
-          // const dateOfBirth = generateDateOfBirth();
-          // console.log(generateCPR(null, dateOfBirth));
-          break;
-        }
-        case "2": {
-          console.log(generateNameAndGender());
-          break;
-        }
-        case "3": {
-          // const fullNameAndGender =  generateNameAndGender();
-          // const dateOfBirth = generateDateOfBirth();
-          // console.log();
-          break;
-        }
-        case "4": {
-          // const person = generateNameAndGender();
-          // const dateOfBirth = generateDateOfBirth();
-          // const cpr = generateCPR(person, dateOfBirth);
-          // console.log();
-          break;
-        }
-        case "5": {
-          // const person = generateNameAndGender();
-          // const dateOfBirth = generateDateOfBirth();
-          // const cpr = generateCPR(person, dateOfBirth);
-          // console.log();
-          break;
-        }
-        case "6": {
-          const result = await generateAddress();
-          console.log(result);
-          process.exit();
-          break;
-        }
-        case "7": {
-          console.log(generatePhoneNumber(null));
-          break;
-        }
-        case "8": {
-          // const person = generateNameAndGender();
-          // const dateOfBirth = generateDateOfBirth();
-          // const cpr = generateCPR(person, dateOfBirth);
-          // const mobileNumber = generateMobilePhoneNumber();
-          // const address = generateAddress();
-          // console.log();
-          break;
-        }
-        case "9": {
-          rl.question(
-            "How many persons?\nEnter a number between 2 and 100.\nAnswer: ",
-            function (answer) {
-              // checks if the answer is number between 2 and 100
-              !answer.match(/\d{2,100}/g) && rl.close();
+        switch (answer) {
+            case '1':
+                birthDate = generateBirthDate();
+                console.log(generateCPR(null, birthDate));
+                break;
+            case '2':
+                console.log(generateNameAndGender());
+                break;
+            case '3':
+                console.log(generateNameAndGender());
+                console.log(generateBirthDate().toLocaleDateString("en-GB"));
+                break;
+            case '4':
+                fullNameAndGender = generateNameAndGender();
+                birthDate = generateBirthDate();
+                console.log(generateNameAndGender());
+                console.log(generateCPR(fullNameAndGender, birthDate));
+                break;
+            case '5':
+                fullNameAndGender = generateNameAndGender();
+                birthDate = generateBirthDate();
+                console.log(birthDate.toLocaleDateString("en-GB"));
+                console.log(generateNameAndGender());
+                console.log(generateCPR(fullNameAndGender, birthDate));
+                break;
+            case '6':
+                address = await generateAddress();
+                console.log(address);
+                process.exit();
+            case '7':
+                console.log(generatePhoneNumber(null));
+                break;
+            case '8':
+                fullNameAndGender = generateNameAndGender();
+                birthDate = generateBirthDate();
+                console.log(birthDate.toLocaleDateString("en-GB"));
+                console.log(generateNameAndGender());
+                console.log(generateCPR(fullNameAndGender, birthDate));
+                console.log(generatePhoneNumber(null));
+                console.log(await generateAddress());
+                break;
+            case '9':
+                rl.question("How many persons?\nEnter a number between 2 and 100.\nAnswer: ", async function (answer) {
 
-              // prints number of persons...
-              for (let i = 0; i < parseInt(answer); i++) {
-                // const person = generateNameAndGender();
-                // const dateOfBirth = generateDateOfBirth();
-                // const cpr = generateCPR(person, dateOfBirth);
-                // const mobileNumber = generateMobilePhoneNumber();
-                // const address = generateAddress();
-                // console.log();
-              }
+                    // checks if the answer is number between 2 and 100
+                    !answer.match(/\d{2,100}/g) && rl.close();
 
-              // closes the connection
-              rl.close();
-            }
-          );
-          break;
+                    // prints number of persons...
+                    for (let i = 0; i < parseInt(answer); i++) {
+                        fullNameAndGender = generateNameAndGender();
+                        birthDate = generateBirthDate();
+                        console.log(birthDate.toLocaleDateString("en-GB"));
+                        console.log(generateNameAndGender());
+                        console.log(generateCPR(fullNameAndGender, birthDate));
+                        console.log(generatePhoneNumber(null));
+                        console.log(await generateAddress());
+                    }
+
+                    // closes the connection
+                    rl.close();
+                });
         }
-      }
 
       // hack to keep connection open if the user needs to enter second answer
       answer !== "9" && rl.close();
