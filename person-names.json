@@ -45,11 +45,11 @@
 		"gender": "male"
 	}, {
 		"name": "Benjamin C.",
-		"surname": "Møller",
+		"surname": "Moeller",
 		"gender": "male"
 	}, {
 		"name": "Simon L.",
-		"surname": "Østergaard",
+		"surname": "Oestergaard",
 		"gender": "male"
 	}, {
 		"name": "Mia M.",
@@ -85,7 +85,7 @@
 		"gender": "male"
 	}, {
 		"name": "Sander T.",
-		"surname": "Møller",
+		"surname": "Moeller",
 		"gender": "male"
 	}, {
 		"name": "Sofie M.",
@@ -109,7 +109,7 @@
 		"gender": "female"
 	}, {
 		"name": "Johanne A.",
-		"surname": "Jørgensen",
+		"surname": "Joergensen",
 		"gender": "female"
 	}, {
 		"name": "Mads A.",
@@ -169,7 +169,7 @@
 		"gender": "female"
 	}, {
 		"name": "David J.",
-		"surname": "Østergaard",
+		"surname": "Oestergaard",
 		"gender": "male"
 	}, {
 		"name": "Bertram K.",
@@ -284,12 +284,12 @@
 		"surname": "Kristensen",
 		"gender": "female"
 	}, {
-		"name": "Søren T.",
-		"surname": "Nørgaard",
+		"name": "Soeren T.",
+		"surname": "Noergaard",
 		"gender": "male"
 	}, {
 		"name": "August S.",
-		"surname": "Søndergaard",
+		"surname": "Soendergaard",
 		"gender": "male"
 	}, {
 		"name": "Emil F.",
@@ -337,11 +337,11 @@
 		"gender": "male"
 	}, {
 		"name": "Emilie C.",
-		"surname": "Nørgaard",
+		"surname": "Noergaard",
 		"gender": "female"
 	}, {
 		"name": "Patrick E.",
-		"surname": "Søndergaard",
+		"surname": "Soendergaard",
 		"gender": "male"
 	}, {
 		"name": "Emily M.",
@@ -393,7 +393,7 @@
 		"gender": "male"
 	}, {
 		"name": "Lucas M.",
-		"surname": "Kjær",
+		"surname": "Kjaer",
 		"gender": "male"
 	}, {
 		"name": "Sofia S.",
@@ -421,7 +421,7 @@
 		"gender": "female"
 	}, {
 		"name": "Josefine J.",
-		"surname": "Østergaard",
+		"surname": "Oestergaard",
 		"gender": "female"
 	}, {
 		"name": "Alfred A.",
@@ -473,7 +473,7 @@
 		"gender": "male"
 	}, {
 		"name": "Rosa V.",
-		"surname": "Møller",
+		"surname": "Moeller",
 		"gender": "female"
 	}, {
 		"name": "Aase D.",
@@ -493,7 +493,7 @@
 		"gender": "male"
 	}, {
 		"name": "Trine M.",
-		"surname": "Kjær",
+		"surname": "Kjaer",
 		"gender": "female"
 	}, {
 		"name": "Morten C.",
@@ -509,7 +509,7 @@
 		"gender": "female"
 	}, {
 		"name": "Amanda O.",
-		"surname": "Søndergaard",
+		"surname": "Soendergaard",
 		"gender": "female"
 	}, {
 		"name": "Katrine A.",
@@ -524,11 +524,11 @@
 		"surname": "Villadsen",
 		"gender": "female"
 	}, {
-		"name": "Lærke J.",
+		"name": "Laerke J.",
 		"surname": "Petersen",
 		"gender": "female"
 	}, {
-		"name": "Søren C.",
+		"name": "Soeren C.",
 		"surname": "Johnsen",
 		"gender": "male"
 	}, {
@@ -557,7 +557,7 @@
 		"gender": "male"
 	}, {
 		"name": "Johanne J.",
-		"surname": "Sørensen",
+		"surname": "Soerensen",
 		"gender": "female"
 	}, {
 		"name": "Kasper O.",
@@ -644,7 +644,7 @@
 		"surname": "Mogensen",
 		"gender": "female"
 	}, {
-		"name": "Lærke A.",
+		"name": "Laerke A.",
 		"surname": "Petersen",
 		"gender": "female"
 	}, {
@@ -697,7 +697,7 @@
 		"gender": "female"
 	}, {
 		"name": "Jonathan S.",
-		"surname": "Kjær",
+		"surname": "Kjaer",
 		"gender": "male"
 	}, {
 		"name": "Liva O.",
@@ -845,7 +845,7 @@
 		"gender": "female"
 	}, {
 		"name": "Kristine R.",
-		"surname": "Sørensen",
+		"surname": "Soerensen",
 		"gender": "female"
 	}, {
 		"name": "Anne M.",
@@ -973,7 +973,7 @@
 		"gender": "female"
 	}, {
 		"name": "Anne L.",
-		"surname": "Kjær",
+		"surname": "Kjaer",
 		"gender": "female"
 	}, {
 		"name": "Silje M.",
@@ -1081,7 +1081,7 @@
 		"gender": "male"
 	}, {
 		"name": "Patrick E.",
-		"surname": "Sørensen",
+		"surname": "Soerensen",
 		"gender": "male"
 	}, {
 		"name": "Philip N.",
@@ -1245,7 +1245,7 @@
 		"gender": "male"
 	}, {
 		"name": "Nicklas S.",
-		"surname": "Nørgaard",
+		"surname": "Noergaard",
 		"gender": "male"
 	}, {
 		"name": "Silje O.",
@@ -1257,7 +1257,7 @@
 		"gender": "male"
 	}, {
 		"name": "Liv R.",
-		"surname": "Østergaard",
+		"surname": "Oestergaard",
 		"gender": "female"
 	}, {
 		"name": "Anne M.",
@@ -1413,7 +1413,7 @@
 		"gender": "female"
 	}, {
 		"name": "Hjalte N.",
-		"surname": "Sørensen",
+		"surname": "Soerensen",
 		"gender": "male"
 	}, {
 		"name": "Mohamed E.",
@@ -1445,7 +1445,7 @@
 		"gender": "female"
 	}, {
 		"name": "Alberte J.",
-		"surname": "Sørensen",
+		"surname": "Soerensen",
 		"gender": "female"
 	}, {
 		"name": "Philip S.",
@@ -1505,7 +1505,7 @@
 		"gender": "male"
 	}, {
 		"name": "Ditte C.",
-		"surname": "Østergaard",
+		"surname": "Oestergaard",
 		"gender": "female"
 	}, {
 		"name": "Oskar N.",
@@ -1517,7 +1517,7 @@
 		"gender": "female"
 	}, {
 		"name": "Nicklas M.",
-		"surname": "Østergaard",
+		"surname": "Oestergaard",
 		"gender": "male"
 	}, {
 		"name": "Tobias T.",
@@ -1577,7 +1577,7 @@
 		"gender": "male"
 	}, {
 		"name": "Nicolai S.",
-		"surname": "Jørgensen",
+		"surname": "Joergensen",
 		"gender": "male"
 	}, {
 		"name": "Maja M.",
@@ -1633,7 +1633,7 @@
 		"gender": "male"
 	}, {
 		"name": "Stine O.",
-		"surname": "Jørgensen",
+		"surname": "Joergensen",
 		"gender": "female"
 	}, {
 		"name": "Rasmus M.",
@@ -1653,7 +1653,7 @@
 		"gender": "male"
 	}, {
 		"name": "Tristan C.",
-		"surname": "Jørgensen",
+		"surname": "Joergensen",
 		"gender": "male"
 	}, {
 		"name": "Michelle J.",
@@ -1732,7 +1732,7 @@
 		"surname": "Eriksen",
 		"gender": "male"
 	}, {
-		"name": "Søren F.",
+		"name": "Soeren F.",
 		"surname": "Lind",
 		"gender": "male"
 	}, {
@@ -1745,7 +1745,7 @@
 		"gender": "male"
 	}, {
 		"name": "Carl M.",
-		"surname": "Kjær",
+		"surname": "Kjaer",
 		"gender": "male"
 	}, {
 		"name": "Mia A.",
@@ -1765,7 +1765,7 @@
 		"gender": "male"
 	}, {
 		"name": "Trine M.",
-		"surname": "Østergaard",
+		"surname": "Oestergaard",
 		"gender": "female"
 	}, {
 		"name": "Freja S.",
@@ -1773,7 +1773,7 @@
 		"gender": "female"
 	}, {
 		"name": "Alexander C.",
-		"surname": "Møller",
+		"surname": "Moeller",
 		"gender": "male"
 	}, {
 		"name": "David E.",
@@ -1861,7 +1861,7 @@
 		"gender": "female"
 	}, {
 		"name": "Nikolaj E.",
-		"surname": "Nørgaard",
+		"surname": "Noergaard",
 		"gender": "male"
 	}, {
 		"name": "Sarah C.",
@@ -1885,7 +1885,7 @@
 		"gender": "female"
 	}, {
 		"name": "Anton E.",
-		"surname": "Jørgensen",
+		"surname": "Joergensen",
 		"gender": "male"
 	}, {
 		"name": "Mads C.",
@@ -1929,7 +1929,7 @@
 		"gender": "male"
 	}, {
 		"name": "Philip L.",
-		"surname": "Møller",
+		"surname": "Moeller",
 		"gender": "male"
 	}, {
 		"name": "Christoffer S.",
@@ -1941,7 +1941,7 @@
 		"gender": "female"
 	}, {
 		"name": "Tobias P.",
-		"surname": "Møller",
+		"surname": "Moeller",
 		"gender": "male"
 	}, {
 		"name": "Abellona A.",
@@ -2132,8 +2132,8 @@
 		"surname": "Poulsen",
 		"gender": "female"
 	}, {
-		"name": "Søren M.",
-		"surname": "Kjær",
+		"name": "Soeren M.",
+		"surname": "Kjaer",
 		"gender": "male"
 	}, {
 		"name": "Elias A.",
