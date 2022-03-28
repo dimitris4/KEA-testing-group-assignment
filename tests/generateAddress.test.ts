@@ -45,7 +45,7 @@ describe("Floor generation testing", () => {
   })
   test("Floor is either st or a number", async () => {
     let testFloor = await generateAddress();
-    expect(testFloor.floor).toMatch(/^st$|^[0-9]+$/);
+    expect(testFloor.floor).toMatch(/^st$|^[1-9]+$/);
   })
 })
 
@@ -83,6 +83,16 @@ describe("Door generation testing", () => {
     let [sideOfDoor, numberOfDoor] = testDoor.door.split(" ");
     expect(parseInt(numberOfDoor)).toBeGreaterThanOrEqual(1);
   })
+  test("Number of door is not 0", async () => {
+    let testDoor = await generateAddress();
+    let [sideOfDoor, numberOfDoor] = testDoor.door.split(" ");
+    expect(parseInt(numberOfDoor)).not.toBe(0);
+  })
+  test("Number of door is not 51", async () => {
+    let testDoor = await generateAddress();
+    let [sideOfDoor, numberOfDoor] = testDoor.door.split(" ");
+    expect(parseInt(numberOfDoor)).not.toBe(51);
+  })
 })
 
 describe("Postal code and Town testing", () => {
@@ -92,7 +102,7 @@ describe("Postal code and Town testing", () => {
   })
   test("Town is composed only of letters", async () => {
     let testPostalCode = await generateAddress();
-    return expect(testPostalCode.postalCode.town).not.toMatch(/[0-9]+/);
+    return expect(testPostalCode.postalCode.town).not.toMatch(/^[0-9]+$/);
   });
   test("Town length is equal or lesser than 20", async () => {
     let testPostalCode = await generateAddress();
@@ -102,28 +112,52 @@ describe("Postal code and Town testing", () => {
     let testPostalCode = await generateAddress();
     return expect(testPostalCode.postalCode.town).not.toHaveLength(0);
   });
+  test("Town is length is not 0", async () => {
+    let testPostalCode = await generateAddress();
+    return expect(testPostalCode.postalCode.town).not.toHaveLength(21);
+  });
+  test("Town is length is greater than 1", async () => {
+    let testPostalCode = await generateAddress();
+    return expect(testPostalCode.postalCode.town.length).toBeGreaterThanOrEqual(1);
+  });
   test("Postal Code is a string type", async () => {
     let testPostalCode = await generateAddress();
     return expect(testPostalCode.postalCode.postalCode).toEqual(expect.any(String));
   })
   test("Postal Code is composed only of numbers", async () => {
     let testPostalCode = await generateAddress();
-    return expect(testPostalCode.postalCode.postalCode).toMatch(/[0-9]+/);
+    return expect(testPostalCode.postalCode.postalCode).toMatch(/^[0-9]+$/);
   });
   test("Postal Code is lesser than or equal to a 9990", async () => {
     let testPostalCode = await generateAddress();
     return expect(parseInt(testPostalCode.postalCode.postalCode)).toBeLessThan(9990);
   });
+  test("Postal Code is not 9991", async () => {
+    let testPostalCode = await generateAddress();
+    return expect(parseInt(testPostalCode.postalCode.postalCode)).not.toBe(9991);
+  });
   test("Postal Code is greater than or equal to a 1301", async () => {
     let testPostalCode = await generateAddress();
     return expect(parseInt(testPostalCode.postalCode.postalCode)).toBeGreaterThanOrEqual(1301);
   });
-  test("Postal Code length is 4", async () => {
+  test("Postal Code is not 1300", async () => {
     let testPostalCode = await generateAddress();
-    return expect(testPostalCode.postalCode.postalCode).toHaveLength(4);
+    return expect(parseInt(testPostalCode.postalCode.postalCode)).not.toBe(1300);
+  });
+  test("Postal Code length is be equal or less than 4", async () => {
+    let testPostalCode = await generateAddress();
+    return expect(testPostalCode.postalCode.postalCode.length).toBeLessThanOrEqual(4);
+  });
+  test("Postal Code length is equal or greater than 1", async () => {
+    let testPostalCode = await generateAddress();
+    return expect(testPostalCode.postalCode.postalCode.length).toBeGreaterThanOrEqual(1);
   });
   test("Postal Code length is not 0", async () => {
     let testPostalCode = await generateAddress();
     return expect(testPostalCode.postalCode.postalCode).not.toHaveLength(0);
+  });
+  test("Postal Code length is not 5", async () => {
+    let testPostalCode = await generateAddress();
+    return expect(testPostalCode.postalCode.postalCode).not.toHaveLength(5);
   });
 })
