@@ -1,5 +1,6 @@
 import { generateRandomNumber } from "../utils/generateRandomNumberBetweenRange";
 import * as personsFile from "../../person-names.json";
+import { Person } from "../models/Person";
 
 export const generateNameAndGender = () => {
   const personsList = personsFile.persons;
@@ -8,5 +9,10 @@ export const generateNameAndGender = () => {
   const randomPersonFirstName = randomPerson.name.toString();
   const randomPersonLastName = randomPerson.surname.toString();
   const randomPersonGender = randomPerson.gender.toString();
-  return `FirstName: ${randomPersonFirstName},\nLastName: ${randomPersonLastName},\nGender: ${randomPersonGender}`;
+  const person: Person = {
+    firstName: randomPersonFirstName,
+    lastName: randomPersonLastName,
+    gender: randomPersonGender
+  };
+  return person;
 };
