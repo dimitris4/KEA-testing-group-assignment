@@ -17,7 +17,7 @@ export const init = () => {
       password: process.env.MY_SQL_DB_PASSWORD,
       database: process.env.MY_SQL_DB_DATABASE,
     });
-    console.debug('MySql Adapter Pool generated successfully');
+    //console.debug('MySql Adapter Pool generated successfully');
   } catch (error) {
     console.error('[mysql.connector][init][Error]: ', error);
     throw new Error('failed to initialized pool');

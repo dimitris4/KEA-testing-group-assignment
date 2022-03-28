@@ -1,7 +1,8 @@
 import * as MySQLConnector from '../utils/mysql.connector';
 import { execute } from "./../utils/mysql.connector";
 import { generateRandomNumber } from '../utils/generateRandomNumberBetweenRange';
-
+import {Address} from "../models/Address";
+// create database pool
 const generateStreet = () => {
     let results = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
@@ -32,6 +33,8 @@ const generateDoor = () => {
 
 const getRandomPostalCodeAsync: any = async () => {
   try {
+    MySQLConnector.init();
+
     const response = await execute<any>(`
     SELECT *
     FROM postal_code
@@ -45,7 +48,13 @@ const getRandomPostalCodeAsync: any = async () => {
 };
 
 export const generateAddress = async () => {
-    MySQLConnector.init();
+
     const getRandomPostalCode = await getRandomPostalCodeAsync();
-    return `${generateStreet()} ${generateStreetNumber()} ${generateFloor()}.${generateDoor()}, ${getRandomPostalCode.postalCode} ${getRandomPostalCode.town}`
+    let returnObject:Address = {
+      street:generateStreet(),
+      streetNumber:generateStreetNumber(),
+      floor:generateFloor(),
+      door:generateDoor(), 
+      postalCode: getRandomPostalCode,}
+      return returnObject;
 }

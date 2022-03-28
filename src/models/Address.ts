@@ -3,7 +3,8 @@ export  interface Address {
     streetNumber: number;
     floor:string;
     door:string;
-    postalCode:{
-
+    postalCode:{    
+        postalCode: string;
+        town:string;
     };
 }
