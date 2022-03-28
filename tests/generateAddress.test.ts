@@ -1,10 +1,10 @@
 import {generateAddress} from "../src/generateMethods/generateAddress";
 import * as MySQLConnector from '../src/utils/mysql.connector';
 
-afterAll(() => {
-  console.debug("After all tests kill the connection");
-  return MySQLConnector.end();
-});
+// afterAll(() => {
+//   console.debug("After all tests kill the connection");
+//   return MySQLConnector.end();
+// });
 describe("Streetname Generation testing",()=>{
     test("A string is returned",async()=>{
         let testStreet = await generateAddress();
